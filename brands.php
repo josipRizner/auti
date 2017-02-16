@@ -64,7 +64,7 @@
                   <h1>Proizvođači</h1>
 
                   <?php
-                        $sql = "SELECT id, name, year_est FROM brands;";
+                        $sql = "SELECT id, name, year_est FROM brands ORDER BY name;";
                         $result = $mysqli->query($sql);
 
 
