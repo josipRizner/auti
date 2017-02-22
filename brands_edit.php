@@ -63,18 +63,25 @@
                   <div class="x_content">
                   <h1>Unos</h1>
 
+                 <?php 
+                 $sql = "SELECT name, year_est FROM brands WHERE id=" . $_GET['id'];
+                 $result = $mysqli->query($sql);
+                 $brand = $result->fetch_assoc();
+
+                 ?>
+                 
                   <form action="brands_create.php" method="post" class="form-horizontal form-label-left">
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Ime proizvođača:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['name']); ?>">
                     </div>
                     </div>
 
                     <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="year_est">Datum osnutka:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="year_est" name="year_est" required="required" class="form-control col-md-7 col-xs-12">
+                    <input type="text" id="year_est" name="year_est" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['year_est']); ?>">
                     </div>
                     </div>
 
