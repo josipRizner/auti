@@ -61,16 +61,17 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_content">
-                  <h1>Unos</h1>
+                  <h1>Izmjena <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h1>
 
                  <?php 
-                 $sql = "SELECT name, year_est FROM brands WHERE id=" . $_GET['id'];
+                 $sql = "SELECT id, name, year_est FROM brands WHERE id=" . $_GET['id'];
                  $result = $mysqli->query($sql);
                  $brand = $result->fetch_assoc();
 
                  ?>
                  
-                  <form action="brands_create.php" method="post" class="form-horizontal form-label-left">
+                  <form action="brands_update.php" method="post" class="form-horizontal form-label-left">
+                    <input type="hidden" name="id" value="<?php echo($brand['id']); ?>">
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Ime proizvođača:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
