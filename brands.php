@@ -77,6 +77,7 @@
                           <th>Name</th>
                           <th>Year established</th>
                           <th></th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -87,6 +88,7 @@
                                 echo('<td>' . $brand['name'] . '</td>');
                                 echo('<td>' . $brand['year_est'] . '</td>');
                                 echo('<td><a href="brands_edit.php?id=' . $brand['id'] . '"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>');
+                                echo('<td><a href="brands_delete.php?id=' . $brand['id'] . '"><i class="fa fa-trash" aria-hidden="true"></i></a></td>');
                                 echo('</tr>');
                             }
                         ?>
